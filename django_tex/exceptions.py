@@ -49,6 +49,7 @@ class TexError(Exception):
             )
 
             self.message += "\n\n" + template_context
+            super(TexError, self).__init__(log, source, template_name)
 
     def __str__(self):
         return self.message
